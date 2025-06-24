@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,14 +28,14 @@ const Portfolio = () => {
       title: "Smart Garbage Monitoring System",
       description: "IoT-based solution that automates waste bin interaction by detecting objects and managing bin lids, integrated with Blynk App for real-time monitoring",
       tech: ["ESP32", "Ultrasonic Sensor", "IR Sensor", "Servo Motor", "Blynk App", "C++", "Arduino IDE"],
-      github: "https://github.com/abdularshath/smart",
+      github: "https://github.com/abdularshath/smart-garbage-monitoring",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
     },
     {
       title: "Kovil Management System",
       description: "Developed a web application to manage temple operations, including employee records, taxpayer data, stock updates, notes, and pooja schedules, with a structured backend",
       tech: ["MongoDB", "Express.js", "React.js", "Node.js", "MERN Stack"],
-      github: "https://github.com/abdularshath/kovil", 
+      github: "https://github.com/abdularshath/kovil-management-system", 
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop"
     }
   ];
@@ -196,44 +195,61 @@ const Portfolio = () => {
 
       {/* Home Section */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-                AbdulArshath A
-              </span>
-            </h1>
-            <h2 className={`text-2xl md:text-3xl mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Full-Stack Developer | IoT Enthusiast
-            </h2>
-            <p className={`text-lg mb-12 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-              Engineering student passionate about full-stack web development, with a strong foundation in React.js, Node.js, 
-              and MongoDB. Skilled in developing scalable and secure web applications, and experienced in IoT projects and 
-              collaborative development through academic and consultancy projects.
-            </p>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="animate-fade-in grid md:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                  AbdulArshath A
+                </span>
+              </h1>
+              <h2 className={`text-xl md:text-2xl mb-6 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                Full-Stack Developer | IoT Enthusiast
+              </h2>
+              <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                Engineering student passionate about full-stack web development, with a strong foundation in React.js, Node.js, 
+                and MongoDB. Skilled in developing scalable and secure web applications, and experienced in IoT projects and 
+                collaborative development through academic and consultancy projects.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Button 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3"
+                  onClick={handleDownloadResume}
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3"
+                  onClick={() => scrollToSection('projects')}
+                >
+                  View Projects
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white px-6 py-3"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  Contact Me
+                </Button>
+              </div>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
-                onClick={handleDownloadResume}
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg"
-                onClick={() => scrollToSection('projects')}
-              >
-                View Projects
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white px-8 py-3 text-lg"
-                onClick={() => scrollToSection('contact')}
-              >
-                Contact Me
-              </Button>
+            {/* Profile Image */}
+            <div className="flex justify-center md:justify-end">
+              <div className="relative">
+                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-cyan-400 shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/e09ed682-b5c5-4edd-b673-5c5081d5fd19.png" 
+                    alt="AbdulArshath A - Professional Photo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-cyan-400/20 animate-pulse"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -325,7 +341,11 @@ const Portfolio = () => {
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="outline" className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+                    onClick={() => window.open(project.github, '_blank')}
+                  >
                     <Github className="mr-2 h-4 w-4" />
                     View on GitHub
                   </Button>
