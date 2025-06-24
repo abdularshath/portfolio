@@ -25,10 +25,17 @@ const Portfolio = () => {
 
   const projects = [
     {
+      title: "Personal Portfolio Website",
+      description: "Modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features dark/light theme toggle, smooth animations, and responsive design showcasing projects, certifications, and skills.",
+      tech: ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Shadcn UI", "Lucide Icons"],
+      github: "https://github.com/abdularshath/portfolio",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop"
+    },
+    {
       title: "Smart Garbage Monitoring System",
       description: "IoT-based solution that automates waste bin interaction by detecting objects and managing bin lids, integrated with Blynk App for real-time monitoring",
       tech: ["ESP32", "Ultrasonic Sensor", "IR Sensor", "Servo Motor", "Blynk App", "C++", "Arduino IDE"],
-      github: "https://github.com/abdularshath/smart-garbage-monitoring",
+      github: "https://github.com/abdularshath/smart",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
     },
     {
@@ -311,7 +318,7 @@ const Portfolio = () => {
             </span>
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className={`border hover:scale-105 transition-all duration-300 ${
                 isDarkMode ? 'bg-slate-800/50 border-slate-600 hover:border-blue-400' : 'bg-white border-gray-200 hover:border-blue-400 shadow-lg'
