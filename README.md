@@ -2,17 +2,12 @@
 
 ## Project info
 
-**URL**: portfolio-pi-five-68.vercel.app
+**URL**: [portfolio-pi-five-68.vercel.app](https://portfolio-pi-five-68.vercel.app/)
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/118acb41-218f-459c-b38f-1028f413830c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -60,11 +55,9 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/118acb41-218f-459c-b38f-1028f413830c) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+
 
 Yes, you can!
 
